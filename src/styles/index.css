@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  #root,
+  .wrapper {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-white text-lg text-default;
+  }
+
+  .wrapper {
+    @apply flex flex-col;
+    > main {
+      @apply grow;
+    }
+  }
+}
