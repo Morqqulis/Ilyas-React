@@ -5,28 +5,25 @@ import HeaderMenu from './HeaderMenu'
 import HeaderMobileMenu from './HeaderMobileMenu'
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false)
-
-  const handleScroll = () => {
-    const offset = window.scrollY
-    setScrolled(offset > 100)
-  }
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    handleScroll()
+    const scrollHandler = () => setIsScrolled(window.scrollY > 100)
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', scrollHandler)
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', scrollHandler)
   }, [])
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-300 ease-in-out ${scrolled ? 'top-0 bg-dark-gray' : 'top-[70px]'}`}
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'top-0 bg-dark-gray' : 'top-[70px]'}`}
     >
       <div className="container">
-        <nav className="flex justify-between items-center py-4">
-          <img src={Logo} alt="logo" width={161} height={53} />
+        <nav className="flex items-center justify-between py-4">
+          <a href={'/'}>
+            <img src={Logo} alt="logo" width={161} height={53} />
+          </a>
           <HeaderMenu />
           <HeaderMobileMenu />
           <HeaderBurger />

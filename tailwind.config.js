@@ -17,6 +17,17 @@ export default {
         lg: { max: '768px' },
         md: { max: '576px' },
         sm: { max: '490px' },
+
+        'min-2xl': '1230px',
+        'min-xl': '992px',
+        'min-lg': '768px',
+        'min-md': '576px',
+        'min-sm': '490px',
+      },
+
+      gap: {
+        '60px': '3.75rem',
+        '45px': '2.8125rem',
       },
 
       colors: {

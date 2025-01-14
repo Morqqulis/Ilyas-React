@@ -25,7 +25,7 @@ const Skills = () => {
       <div className={`flex items-center justify-between gap-2.5 xl:flex-col xl:items-center xl:gap-5`}>
         <img src={image} alt="Human Image" width={415} height={450} />
 
-        <div className={`flex w-full basis-[665px] flex-col gap-[85px] xl:gap-10`}>
+        <div className={`flex w-full max-w-[665px] flex-col gap-[85px] xl:gap-10`}>
           {skillNames.map((skillName) => (
             <SkillLine value={skillName.value} name={skillName.name} key={skillName.name} />
           ))}
