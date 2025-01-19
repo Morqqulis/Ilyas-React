@@ -3,7 +3,7 @@ import CustomSection from '../../components/ui/CustomSection'
 
 const Hero = () => {
   return (
-    <CustomSection
+    <CustomSection id={'hero'}
       className={`h-dvh bg-cover bg-center bg-no-repeat text-white`}
       style={{ backgroundImage: `url(${bg})` }}
     >

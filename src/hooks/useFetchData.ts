@@ -8,23 +8,24 @@ const useFetchData = <T>(url: string) => {
   const fetchData = async () => {
     try {
       setLoading(true)
-      setError(null)
-
       const response = await fetch(url)
       if (!response.ok) {
+        setError(new Error(`HTTP Ошибка! статус: ${response.status}`))
         throw new Error(`HTTP Ошибка! статус: ${response.status}`)
       }
-      const result = await response.json()
-      setData(result)
+      setData(await response.json())
     } catch (error) {
       setError(error instanceof Error ? error : new Error('Произошла ошибка при загрузке данных'))
     } finally {
-      setLoading(false)
+      setTimeout(() => {
+        setLoading(false)
+      }, 0)
     }
   }
 
   useEffect(() => {
     fetchData()
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

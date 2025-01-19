@@ -28,7 +28,7 @@ const serviceItems: IServiceItem[] = [
 
 const Service = () => {
   return (
-    <CustomSection>
+    <CustomSection id={'services'}>
       <CustomTitle className={`mb-[60px] lg:text-center`} text={'Услуги'} />
       <motion.div
         className={`flex w-full flex-wrap items-start justify-between gap-5 lg:flex-col`}

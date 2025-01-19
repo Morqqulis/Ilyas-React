@@ -20,7 +20,7 @@ const skillNames: ISkillLine[] = [
 
 const Skills = () => {
   return (
-    <CustomSection className={`bg-[#F6F6F8]`}>
+    <CustomSection className={`bg-[#F6F6F8]`} id={'skills'}>
       <CustomTitle className={`mb-14`} text={'Навыки'} />
       <div className={`flex items-center justify-between gap-2.5 xl:flex-col xl:items-center xl:gap-5`}>
         <img src={image} alt="Human Image" width={415} height={450} />
